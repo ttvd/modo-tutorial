@@ -2,7 +2,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.4.3)
 SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS true)
 CMAKE_POLICY(SET CMP0003 NEW)
 
-PROJECT(modophysique)
+PROJECT(modotutorial01)
 
 # Check debug / release type.
 IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -47,7 +47,7 @@ FILE(GLOB DEF_MODOPHYSIQUE_INCLUDE_CPP "_source/*.cpp")
 # Find out how many bits we have.
 IF(DEF_CMAKE_BITS_X64)
 
-    INCLUDE_DIRECTORIES("_include" "c:\\SDK_64\\_include" "_include" "c:\\SDK_64\\_include\lx")
+    INCLUDE_DIRECTORIES("_include" "c:\\SDK_64\\_include" "_include" "c:\\SDK_64\\_include\\lx")
 
     IF(DEF_CMAKE_DEBUG)
         
@@ -59,12 +59,12 @@ IF(DEF_CMAKE_BITS_X64)
 
     ENDIF()
 
-    ADD_LIBRARY(modophysique64 SHARED ${DEF_MODOPHYSIQUE_INCLUDE_H} ${DEF_MODOPHYSIQUE_INCLUDE_CPP})
-    TARGET_LINK_LIBRARIES(modophysique64 lx_sdk64)   
+    ADD_LIBRARY(modotutorial64_01 SHARED ${DEF_MODOPHYSIQUE_INCLUDE_H} ${DEF_MODOPHYSIQUE_INCLUDE_CPP})
+    TARGET_LINK_LIBRARIES(modotutorial64_01 lx_sdk64)   
 
 ELSE()
 
-    INCLUDE_DIRECTORIES("_include" "c:\\SDK\\_include" "_include" "c:\\SDK\\_include\lx")
+    INCLUDE_DIRECTORIES("_include" "c:\\SDK\\_include" "_include" "c:\\SDK\\_include\\lx")
     
     IF(DEF_CMAKE_DEBUG)
         
@@ -76,7 +76,7 @@ ELSE()
 
     ENDIF()
 
-    ADD_LIBRARY(modophysique SHARED ${DEF_MODOPHYSIQUE_INCLUDE_H} ${DEF_MODOPHYSIQUE_INCLUDE_CPP})
-    TARGET_LINK_LIBRARIES(modophysique lx_sdk)   
+    ADD_LIBRARY(modotutorial_01 SHARED ${DEF_MODOPHYSIQUE_INCLUDE_H} ${DEF_MODOPHYSIQUE_INCLUDE_CPP})
+    TARGET_LINK_LIBRARIES(modotutorial_01 lx_sdk)   
 
 ENDIF()
